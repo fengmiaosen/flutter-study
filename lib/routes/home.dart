@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/switch_checkbox.dart';
+import '../widgets/box.dart';
+
 class MyHomePage extends StatefulWidget {
   // 构造函数语法糖
   // 使用this.title相当于在构造函数中为title属性赋值
@@ -14,6 +17,8 @@ class MyHomePage extends StatefulWidget {
   }
 }
 
+// 下划线前缀标识符，会 强制其变成私有。
+/// State状态类
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
@@ -23,19 +28,31 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _toPage(){
+    Navigator.pushNamed(context, 'new_page');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      // appBar: AppBar(
+      //   title: Text(widget.title),
+      // ),
       body: Center(
-        child: Column(children: [
+        child: Column(
+          children: [
           Text('times ddd!'),
           Text(
             '$_counter',
             style: Theme.of(context).textTheme.headline3,
-          )
+          ),
+          SwitchCheckbox(),
+          RaisedButton(
+            child: Text("jump to new page"),
+            onPressed: _toPage,
+          ),
+          //尺寸限制容器
+          BoxWidget()
         ]),
       ),
       floatingActionButton: FloatingActionButton(
