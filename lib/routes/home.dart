@@ -32,6 +32,14 @@ class _MyHomePageState extends State<MyHomePage> {
     Navigator.pushNamed(context, 'new_page');
   }
 
+  void _toFuturePage(){
+    Navigator.pushNamed(context, 'future_page');
+  }
+
+  void _toGesturePage(){
+    Navigator.pushNamed(context, 'gesture_page');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,6 +58,14 @@ class _MyHomePageState extends State<MyHomePage> {
           RaisedButton(
             child: Text("jump to new page"),
             onPressed: _toPage,
+          ),
+          OutlineButton(
+            child: Text('future request test!'),
+            onPressed: _toFuturePage,
+          ),
+          RaisedButton(
+            child: Text("gesture detect page"),
+            onPressed: _toGesturePage,
           ),
           //尺寸限制容器
           BoxWidget()

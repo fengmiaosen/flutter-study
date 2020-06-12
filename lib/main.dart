@@ -7,6 +7,8 @@ import 'package:english_words/english_words.dart';
 
 import './routes/new_route.dart';
 import './routes/home.dart';
+import './routes/future_page.dart';
+import './routes/gesture_detect.dart';
 
 void main() => runApp(new MyApp());
 
@@ -21,6 +23,8 @@ class MyApp extends StatelessWidget {
         // 注册路由表
         routes: {
           'new_page': (context) => NewRoute(),
+          'future_page': (context) => FuturePageWidget(),
+          'gesture_page': (context) => GestureDetectorTest()
         },
         home: Scaffold(
           appBar: AppBar(
